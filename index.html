@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark fixed-top navbar-dark">
+    <a class="navbar-brand" href="./index.html">hellOfoodie</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cuisine
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" onclick='getRecipes("Chicken")'>Chicken</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Chinese")'>Chinese</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Italian")'>Italian</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Mexican")'>Mexican</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Salad")'>Salads</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Desert")'>Deserts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./feedback.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <li class="nav-item">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search your food" aria-label="Search"
+          id="search-input">
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-button">Search</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="search-close" onclick="cleandata()">x</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <br><br><br><br><br><br><br>
+  <div id="recipes"></div>
+
+  <!-- Modal -->
+  <center>
+    <div class="modal fade in" id="mailModal" role="dialog" style="z-index: 9999; display: none; padding-left: 0px;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="mailheader">Ingredients</h4>
+            <button type="button" class="close" data-dismiss="modal">x</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-horizontal">
+              <div id="datare"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </center>
+  <br><br>
+  <div>
+    <img src="abcd.jpg">
+    <img src="download2.jpg">
+    <h2 align="center" >   CHICKEN LOVER??
+    <a href="#" onclick='getRecipes("Chicken")'><b><u>Click Me!</u></b></a></h2>
+  </div>
+  <br><br>
+  <div>
+    <img src="download4.jpg">
+    <img src="abcd1.png">
+    <h2 align="center">CHINESE??
+    <a href="#" onclick='getRecipes("Chinese")'><b><u>Click Me!</u></b></a></h2>
+  </div>
+  <br><br>
+  <div>
+    <img src="abcd2.jpg">
+    <img src="pizza.png">
+    <h2 align="center">ITALIAN??
+    <a href="#" onclick='getRecipes("Italian")'><b><u> Click Me!</u></b></a></h2>
+  </div>
+  <br><br>
+  <div> 
+    <img src="download1.jpg">
+    <img src="abcd3.png">
+    <h2 align="center">OR SWEETS??
+    <a href="#" onclick='getRecipes("Desert")'><b><u>Click Me!</u></b></a></h2>
+  </div>
+  <br><br>
+
+  <!--Footer-->
+  <div class="bg-dark" id="footer">
+    <h2>HELLOFOODIE</h2>
+    <a href="https://lavish1517.github.io/resume/" style="font-size: 18px;">Lavish's Resume</a><br>
+    <a href="https://manyabatish.github.io/resume/" style="font-size: 18px;">Manya's Resume</a><br>
+    <a href="https://yogesh0102.github.io/resume/" style="font-size: 18px;">Yogesh's Resume</a><br><br>
+    <h3>Follow us on:</h3>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-pinterest"></a>
+  </div>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

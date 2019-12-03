@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <style>
+      body
+      {
+        background-image: url(back.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+      }
+      .navbar
+      {
+        margin-top: 10px;
+      }
+      .navbar .container
+      {
+        background: #ffffffe3;
+        width: auto;
+        border-radius: 0 0 0.1em 0.1em;
+      }
+      .navbar-brand
+      {
+        color: white;
+        font-size: 25px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+      } 
+      .navbar-nav
+      {
+        text-align: center;
+      }
+      .navbar-toggler
+      {
+        padding: 1px 5px;
+        font-size: 18px;
+        line-height: 0.3;
+        background: #fff;
+      }
+      #brand
+      {
+        position: fixed;
+        top: 5em;
+        left: 33%;
+        background: #ffffffcf;
+        width: 35%;
+        border-radius: 0.5em;
+      }
+      #brand-name
+      {
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        text-align: center;
+        font-size: x-large;
+      }
+      #search-bar
+      {
+        padding: 1em 1em 1em 1em;
+      } 
+      #search-input
+      {
+        border-radius: 30px;
+      }
+      #search-button
+      {
+        border-radius: 30px;
+      }
+      #search-close
+      {
+        border-radius: 10px;
+      }
+      .feedback-title
+      {
+        margin-top: 100px;
+        color: white;
+        text-transform: uppercase;
+        transition: 1s;
+        text-align: center;
+      }
+      .feedback-title h1
+      {
+        font-size: 30px;
+      }
+      .feedback-title h2
+      {
+        font-size: 16px;
+      }
+      form
+      {
+        margin-top: 50px;
+        transition: 1s;
+      }
+      .form-control
+      {
+        width: 600px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+      input
+      {
+        height: 40px;
+      }
+      form .submit
+      {
+        background: #3090C7;
+        border-color: transparent;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        height: 50px;
+        margin-top: 20px;
+      }
+      form .submit:hover
+      {
+        background-color: #f44336;
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark fixed-top navbar-dark">
+    <a class="navbar-brand" href="./index.html">hellOfoodie</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cuisine
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" onclick='getRecipes("Chicken")'>Chicken</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Chinese")'>Chinese</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Italian")'>Italian</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Mexican")'>Mexican</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Salad")'>Salads</a>
+            <a class="dropdown-item" href="#" onclick='getRecipes("Desert")'>Deserts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./feedback.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        
+        <li class="nav-item">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search your food" aria-label="Search"
+          id="search-input">
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-button">Search</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="search-close" onclick="cleandata()">x</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="feedback-title">
+    <h1>Give feedback for improvement</h1>
+    <br>
+    <h2>We are always ready to serve you</h2>
+   </div>
+   <div class="feedback-form">
+    <form id="feedback-form" method="post" style="display: flex; flex-direction: column; align-items: center">
+      <input name="name" type="text" class="form-control" placeholder="Your name" required>
+      <br>
+      <input name="email" type="email" class="form-control" placeholder="Your e-mail" required>
+      <br>
+      <textarea name="message" class="form-control" placeholder="Message" row="4" required></textarea>
+      <br>
+      <input type="submit" class="form-control submit" value="SEND MESSAGE">
+    </form>
+  </div>        
+</body>
+</html>
